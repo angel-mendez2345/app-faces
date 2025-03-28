@@ -8,7 +8,7 @@ import cv2
 import os
 import base64
 import pathlib 
-
+ 
 # Set the path of the input folder
 
 dataset = "https://drive.google.com/uc?export=download&id=1IXx1TynW-WmUlNNbJEvnExXDrmDvQlT3"
