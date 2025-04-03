@@ -7,8 +7,8 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 import cv2
 import os
 import base64
-import pathlib 
- 
+import pathlib
+
 # Set the path of the input folder
 
 dataset = "https://drive.google.com/uc?export=download&id=1IXx1TynW-WmUlNNbJEvnExXDrmDvQlT3"
@@ -68,7 +68,7 @@ model.add(Dense(len(listPersons), activation='softmax'))
 
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
-model.fit(X_train.reshape(-1, 150, 150, 1), y_train, epochs=50, validation_data=(X_test.reshape(-1, 150, 150, 1), y_test))
+model.fit(X_train.reshape(-1, 150, 150, 1), y_train, epochs=10, validation_data=(X_test.reshape(-1, 150, 150, 1), y_test))
 
-export_path = 'faces-model/1/'
+export_path = 'face-model/1/'
 tf.saved_model.save(model, os.path.join('./',export_path))
